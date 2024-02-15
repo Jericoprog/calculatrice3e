@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Calcul de la moyenne des élèves du premier cycle.</title>
+    <style>
+        table {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            width: 100%;
+        }
+        body{
+            text-align: center;
+        }
+        li {
+            list-style-type: none;
+        }
+        td {
+            padding: 5px;
+            border: 1px solid black;
+            text-align: center;
+        }
+        strong {
+            color:red;
+        }
+        footer {
+            background-color: yellow;
+            border:3px solid black;
+            border-radius: 5px;
+            padding: 10px 10px;
+        }
+        button {
+            border: 5px solid black inset;
+            border-radius: 5px;
+            color: white;
+            background-color: blue;
+        }
+        header{
+        background-color: yellow;
+            border:3px solid black;
+            border-radius: 5px;
+            padding: 10px 10px;   
+        }
+    </style>
+    
+    <script>
+        function calculDictée(){
+var D1 = document.getElementById('D1').value;
+var D2 = document.getElementById('D2').value;
+
+// Calculer la moyenne des notes de la dictee
+var moyenneDictee = (parseFloat(D1) + parseFloat(D2)) / 2;
+
+// Afficher la moyenne dans la case correspondante
+document.getElementById("moyenneDictee").innerHTML = moyenneDictee;
+
+// Récupérer la valeur du coefficient de la dictee
+var coefficientDictee = 1;
+
+// Calculer la note ponderee de la dictee
+var notePondereeDictee = moyenneDictee * coefficientDictee;
+
+document.getElementById("notePondereeDictee").innerHTML= notePondereeDictee;
+}
+         function calculLangue(){
+             var L1= document.getElementById("L1").value;
+             var L2= document.getElementById("L2").value;
+             var moyenneLangue= (parseFloat(L1) + parseFloat(L2)) /2;
+             document.getElementById("moyenneLangue").innerHTML= moyenneLangue;
+             var coefficientLangue= 2;
+             var notePondereeLangue= moyenneLangue * coefficientLangue;
+             document.getElementById("notePondereeLangue").innerHTML= notePondereeLangue;
+         }
+         
+         function calculExpression(){
+             var E1= document.getElementById("E1").value;
+             var E2= document.getElementById("E2").value;
+             var moyenneExpression= (parseFloat(E1) + parseFloat(E2)) /2;
+             document.getElementById("moyenneExpression").innerHTML= moyenneExpression;
+             var coefficientExpression= 2;
+             var notePondereeExpression= moyenneExpression * coefficientExpression;
+             document.getElementById("notePondereeExpression").innerHTML= notePondereeExpression;
+         }
+         
+         function calculAnglais(){
+             var A1= document.getElementById("A1").value;
+             var A2= document.getElementById("A2").value;
+             var moyenneAnglais= (parseFloat(A1) + parseFloat(A2)) /2;
+             document.getElementById("moyenneAnglais").innerHTML= moyenneAnglais;
+             var coefficientAnglais= 3;
+             var notePondereeAnglais= moyenneAnglais * coefficientAnglais;
+             document.getElementById("notePondereeAnglais").innerHTML= notePondereeAnglais;
+         }
+         
+         function calculHg(){
+             var HG1= document.getElementById("HG1").value;
+             var HG2= document.getElementById("HG2").value;
+             var moyenneHg= (parseFloat(HG1) + parseFloat(HG2)) /2;
+             document.getElementById("moyenneHg").innerHTML= moyenneHg;
+             var coefficientHg= 3;
+             var notePondereeHg= moyenneHg * coefficientHg;
+             document.getElementById("notePondereeHg").innerHTML= notePondereeHg;
+         }
+         
+         function calculSvt(){
+             var SVT1= document.getElementById("SVT1").value;
+             var SVT2= document.getElementById("SVT2").value;
+             var moyenneSvt= (parseFloat(SVT1) + parseFloat(SVT2)) /2;
+             document.getElementById("moyenneSvt").innerHTML= moyenneSvt;
+             var coefficientSvt= 3;
+             var notePondereeSvt= moyenneSvt * coefficientSvt;
+             document.getElementById("notePondereeSvt").innerHTML= notePondereeSvt;
+         }
+         
+        function calculM(){
+             var M1= document.getElementById("M1").value;
+             var M2= document.getElementById("M2").value;
+             var moyenneM= (parseFloat(M1) + parseFloat(M2)) /2;
+             document.getElementById("moyenneM").innerHTML= moyenneM;
+             var coefficientM= 5;
+             var notePondereeM= moyenneM * coefficientM;
+             document.getElementById("notePondereeM").innerHTML= notePondereeM;
+         }
+         
+         function calculPc(){
+             var PC1= document.getElementById("PC1").value;
+             var PC2= document.getElementById("PC2").value;
+             var moyennePc= (parseFloat(PC1) + parseFloat(PC2)) /2;
+             document.getElementById("moyennePc").innerHTML= moyennePc;
+             var coefficientPc= 4;
+             var notePondereePc= moyennePc * coefficientPc;
+             document.getElementById("notePondereePc").innerHTML= notePondereePc;
+         }
+         
+         function calculEps(){
+             var EPS1= document.getElementById("EPS1").value;
+             var EPS2= document.getElementById("EPS2").value;
+             var moyenneEps= (parseFloat(EPS1) + parseFloat(EPS2)) /2;
+             document.getElementById("moyenneEps").innerHTML= moyenneEps;
+             var coefficientEps= 2;
+             var notePondereeEps= moyenneEps * coefficientEps;
+             document.getElementById("notePondereeEps").innerHTML= notePondereeEps;
+         }
+         
+         function calculPondereeGenerale() {
+              var notePondereeDictee= parseFloat(document.getElementById("notePondereeDictee").innerHTML);
+             var notePondereeLangue= parseFloat(document.getElementById("notePondereeLangue").innerHTML); 
+             var notePondereeExpression= parseFloat(document.getElementById("notePondereeExpression").innerHTML);
+             var notePondereeAnglais= parseFloat(document.getElementById("notePondereeAnglais").innerHTML); 
+             var notePondereeHg= parseFloat(document.getElementById("notePondereeHg").innerHTML);
+            var notePondereeSvt= parseFloat(document.getElementById("notePondereeSvt").innerHTML); 
+            var notePondereeM= parseFloat(document.getElementById("notePondereeM").innerHTML);
+             var notePondereePc= parseFloat(document.getElementById("notePondereePc").innerHTML);
+            var notePondereeEps= parseFloat(document.getElementById("notePondereeEps").innerHTML); 
+             
+             var notePondereeGenerale= notePondereeDictee + notePondereeLangue + notePondereeExpression +       notePondereeAnglais + notePondereeHg + notePondereeSvt + notePondereeM + notePondereePc + notePondereeEps;
+             document.getElementById("notePondereeGenerale").innerHTML= notePondereeGenerale;
+         }
+         
+         function calculMoyenneGenerale(){
+             var notePondereeGenerale= parseFloat(document.getElementById("notePondereeGenerale").innerHTML);
+             var moyenneGenerale= notePondereeGenerale / 25;
+             document.getElementById("moyenneGenerale").innerHTML= moyenneGenerale;
+         }
+         
+ </script>
+</head>
+<body>
+    <header>
+   <h1>FEUILLE DE CALCUL DE MOYENNE POUR LA CLASSE DE 3e.</h1> 
+   <br>
+   <p>Renseignez les cases vides et cliquez sur le bouton indiquant chaque matière pour avoir le resultat.</p>
+    </header>
+   <br><br>
+   <br><br>
+   <table>
+       <tr>
+           <td>MATIERES</td>
+           <td>NOTE 1</td>
+           <td>NOTE 2</td>
+           <td>COEFFICIENT</td>
+           <td>MOYENNE</td>
+           <td> NOTE PONDEREE</td>
+       </tr>
+       <tr>
+           <td>Orthographe</td>
+           <td><input type="number" value="" id="D1"/></td>
+           <td><input type="number" value="" id="D2"/></td>
+           <td>1</td>
+           <td id="moyenneDictee"></td>
+           <td id="notePondereeDictee"></td>
+          <td><button onclick="calculDictée()">Orthographe</button></td>
+       </tr>
+       <tr>
+        <td>Expression</td>
+           <td><input type="number" value="" id="E1"/></td>
+           <td><input type="number" value="" id="E2"/></td>
+           <td>2</td>
+           <td id="moyenneExpression"></td>
+           <td id="notePondereeExpression"></td>  
+          <td><button onclick="calculExpression() ">Expression</button></td>
+       </tr>
+       <tr>
+           <td>Langue</td>
+           <td><input type="number" value="" id="L1"/></td>
+           <td><input type="number" value="" id="L2"/></td>
+           <td>2</td>
+           <td id="moyenneLangue"></td>
+           <td id="notePondereeLangue"></td>
+          <td><button onclick="  calculLangue() ">Langue</button></td>
+       </tr>
+       <tr>
+        <td>Anglais</td>
+           <td><input type="number" value="" id="A1"/></td>
+           <td><input type="number" value="" id="A2"/></td>
+           <td>3</td>
+           <td id="moyenneAnglais"></td>
+           <td id="notePondereeAnglais"></td> 
+         <td><button onclick="calculAnglais() ">Anglais</button></td> 
+            
+       </tr>
+       
+       <tr>
+        <td>Histoire-Geographie</td>
+           <td><input type="number" value="" id="HG1"/></td>
+           <td><input type="number" value="" id="HG2"/></td>
+           <td>3</td>
+           <td id="moyenneHg"></td>
+           <td id="notePondereeHg"></td> 
+         <td><button onclick="calculHg()">Histoire-Géographie</button></td>   
+       </tr>  
+       
+       <tr>
+        <td>Mathématiques</td>
+           <td><input type="number" value="" id="M1"/></td>
+           <td><input type="number" value="" id="M2"/></td>
+           <td>5</td>
+           <td id="moyenneM"></td>
+           <td Id="notePondereeM"></td>
+           <td><button onclick="calculM()">Mathématiques</button></td>  
+       </tr>
+       
+       <tr>
+        <td>Physiques-Chimie</td>
+           <td><input type="number" value="" id="PC1"/></td>
+           <td><input type="number" value="" id="PC2"/></td>
+           <td>4</td>
+           <td id="moyennePc"></td>
+           <td id="notePondereePc"></td>  
+          <td><button onclick="calculPc()">Physiques-Chimie</button></td>  
+       </tr>
+        <tr>
+        <td>SVT</td>
+           <td><input type="number" value="" id="SVT1"/></td>
+           <td><input type="number" value="" id="SVT2"/></td>
+           <td>3</td>
+           <td id="moyenneSvt"></td>
+           <td id="notePondereeSvt"></td>  
+          <td><button onclick="calculSvt()">SVT</button></td>  
+       </tr>
+       <tr>
+        <td>EPS</td>
+           <td><input type="number" value="" id="EPS1"/></td>
+           <td><input type="number" value="" id="EPS2"/></td>
+           <td>2</td>
+           <td id="moyenneEps"></td>
+           <td id="notePondereeEps"></td>  
+          <td><button onclick="calculEps()">EPS</button></td>
+       </tr>
+       
+       <tr>
+        <td colspan="3">Note Pondérée</td>
+           
+          
+           <td>25</td>
+           <td colspan="2" id="notePondereeGenerale"></td> 
+          <td><button onclick="calculPondereeGenerale()">Pondérée</button></td>  
+       </tr>
+       
+      <tr>
+        <td >Moyenne</td>
+           <td colspan="5" id="moyenneGenerale"></td>
+         <td> <button onclick="calculMoyenneGenerale()">Moyenne</button></td>  
+       </tr>
+   </table><br><br>
+   <footer>
+       <p>NB:<strong> 
+           <ul>
+               <li>Renseignez toutes les cases même quand la note est 00.</li>
+               <li>Appuyez à chaque fois sur le bouton pour afficher le resultat.</li>
+               <li>Pour mettre une virgule, utiilsez le point(.) au lieu de la virgule(,).</li>
+           </ul>
+       </strong></p>
+   </footer>
+</body>
+</html>
